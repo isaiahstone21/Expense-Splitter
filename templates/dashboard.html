@@ -2,14 +2,38 @@
 <html>
   <head>
     <title>Dashboard</title>
-    <!-- CSS stylesheets and other head elements -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
   </head>
   <body>
-    <!-- Content of the page -->
-    <h1>Heading</h1>
-    <p>Paragraph</p>
-    <a href="#">Link</a>
-
-    <!-- JavaScript scripts and other body elements -->
+    <div class="container">
+      <div class="nav-bar">
+        <img
+          src="{{ url_for('static', filename='css/images/calculator-logo.png') }}"
+        />
+        <a class="nav-bar-logo" href="/">Expense Splitter</a>
+        <a class="nav-bar-other" href="/dashboard">Dashboard</a>
+        <a class="nav-bar-other" href="/expenses">Expenses</a>
+        <a class="nav-bar-other" href="/settings">Settings</a>
+      </div>
+      <div class="hero">
+        <h1>Dashboard</h1>
+        <p>Text Input style</p>
+        <input class="text-input" type="number" />
+        <p>Button style</p>
+        <a href="#" class="buttons">Buttons</a>
+      </div>
+    </div>
   </body>
+  <footer>
+    <p>attributions</p>
+    <a
+      href="https://www.flaticon.com/free-icons/calculator"
+      title="calculator icons"
+      >Calculator icons created by Vitaly Gorbachev - Flaticon</a
+    >
+  </footer>
 </html>
