@@ -8,11 +8,11 @@
 
   <div class="container">
     <div class="nav-bar">
-        <img src="Images/calculator-logo.png">
-        <a href="#">Expense Splitter</a>
-        <a href="#">Settings</a>
-        <a href="#">Expenses</a>
-        <a href="#">Dashboard</a>
+        <img src="{{ url_for('static', filename='css/calculator-logo.png') }}">
+        <a class="nav-bar-logo" href="#">Expense Splitter</a>
+        <a class="nav-bar-other" href="#">Dashboard</a>
+        <a class="nav-bar-other" href="#">Expenses</a>
+        <a class="nav-bar-other" href="#">Settings</a>
     </div>
     <div class="hero">
       <h2>Welcome to our Expense Splitter app!</h2>

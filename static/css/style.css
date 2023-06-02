@@ -25,10 +25,18 @@ h1 {
   overflow: hidden;
   top: 0;
   z-index: 100;
+  display: flex;
 }
 
-.nav-bar a {
-  float: right;
+.nav-bar-logo {
+  color: #000000;
+  text-align: center;
+  padding: 14px 875px 14px 14px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.nav-bar-other {
   color: #FFF;
   text-align: center;
   padding: 14px 16px;
@@ -37,12 +45,11 @@ h1 {
 }
 
 .nav-bar img {
-  float: left;
   max-height: 50px;
   max-width: 50px;
 }
 
-.nav-bar a:hover {
+.nav-bar-other:hover {
   background-color: #2E98F7;
   border-radius: 10px;
 }
