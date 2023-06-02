@@ -1,19 +1,80 @@
-.background {
+body {
   background-color: #424549;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-bar {
+  background-color: #147EDD;
+  color: #FFF;
+  font-weight: bold;
+  padding: 10px;
+  max-height: 50px;
+  position: sticky;
+  overflow: hidden;
+  top: 0;
+  z-index: 100;
+}
 
+.nav-bar a {
+  float: right;
+  color: #FFF;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.nav-bar img {
+  float: left;
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.nav-bar a:hover {
+  background-color: #2E98F7;
+  border-radius: 10px;
+}
+
+.hero {
+  background-color: #FFF;
+  color: #333;
+  padding: 20px;
+  flex: 1;
 }
 
 .buttons {
-
+  display: inline-block;
+  padding: 10px;
+  background-color: #147EDD;
+  color: #FFF;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.tiles {
-
+.buttons:hover {
+  box-shadow: 0 0 5px rgba(20, 126, 221, 0.5);
 }
 
-.text-box {
+.text-input {
+  border-radius: 5px;
+  padding: 10px;
+}
 
+.text-input:focus {
+  outline: none;
+  border-color: #147EDD;
+  box-shadow: 0 0 5px rgba(20, 126, 221, 0.5);
 }
