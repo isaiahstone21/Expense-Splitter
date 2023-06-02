@@ -26,14 +26,16 @@ h1 {
   top: 0;
   z-index: 100;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-bar-logo {
   color: #000000;
-  text-align: center;
-  padding: 14px 875px 14px 14px;
+  padding: 14px 16px;
   text-decoration: none;
   font-size: 20px;
+  flex: 1;
 }
 
 .nav-bar-other {
