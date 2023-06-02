@@ -13,6 +13,10 @@ h1 {
 .container {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  padding: 0 20px; /* Add some padding to the sides to create spacing */
+  margin: 0 auto; /* Center the container horizontally */
+  box-sizing: border-box; /* Include padding in the total width */
 }
 
 .nav-bar {
@@ -31,7 +35,8 @@ h1 {
 .nav-bar-logo {
   color: #000000;
   text-align: center;
-  padding: 14px 875px 14px 14px;
+  padding: 14px;
+  flex: 1; /* Expand to fill available space */
   text-decoration: none;
   font-size: 20px;
 }
