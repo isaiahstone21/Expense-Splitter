@@ -16,8 +16,8 @@ h1 {
 }
 
 .nav-bar {
-  background-color: #147EDD;
-  color: #FFF;
+  background-color: #147edd;
+  color: #fff;
   font-weight: bold;
   padding: 10px;
   max-height: 50px;
@@ -37,7 +37,7 @@ h1 {
 }
 
 .nav-bar-other {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -50,12 +50,12 @@ h1 {
 }
 
 .nav-bar-other:hover {
-  background-color: #2E98F7;
+  background-color: #2e98f7;
   border-radius: 10px;
 }
 
 .hero {
-  background-color: #FFF;
+  background-color: #fff;
   color: #333;
   padding: 20px;
   flex: 1;
@@ -64,8 +64,8 @@ h1 {
 .buttons {
   display: inline-block;
   padding: 10px;
-  background-color: #147EDD;
-  color: #FFF;
+  background-color: #147edd;
+  color: #fff;
   text-decoration: none;
   border-radius: 4px;
   transition: background-color 0.3s ease;
@@ -82,6 +82,6 @@ h1 {
 
 .text-input:focus {
   outline: none;
-  border-color: #147EDD;
+  border-color: #147edd;
   box-shadow: 0 0 5px rgba(20, 126, 221, 0.5);
 }

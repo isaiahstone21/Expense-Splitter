@@ -13,6 +13,18 @@ db = SQLAlchemy(app)
 def index():
     return render_template('index.html')
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/expenses')
+def expenses():
+    return render_template('expenses.html')
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
+
 port = os.getenv('PORT')
 
 if __name__ == '__main__':
