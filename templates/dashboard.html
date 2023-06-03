@@ -15,9 +15,9 @@
       <div class="nav-bar">
         <img src="{{ url_for('static', filename='css/images/calculator-logo.png') }}"/>
         <a class="nav-bar-logo" href="/">Expense Splitter</a>
-        <a class="nav-bar-other" href="/dashboard">Dashboard</a>
-        <a class="nav-bar-other" href="/expenses">Expenses</a>
-        <a class="nav-bar-other" href="/settings">Settings</a>
+        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 1 else '' }}" href="/dashboard">Dashboard</a>
+        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 2 else '' }}" href="/expenses">Expenses</a>
+        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 3 else '' }}" href="/settings">Settings</a>
       </div>
       <div class="hero">
         <h1>Dashboard</h1>
