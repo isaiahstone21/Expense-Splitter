@@ -21,6 +21,19 @@
       </div>
       <div class="hero">
         <h1>Expenses</h1>
+        <form action="/expenses" method="POST">
+          <label for="expense">Total Expenses:</label>
+          <input type="text" id="expense" name="expense" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
+          <div id="people-fields">
+            <div class="person-field">
+              <label for="person-1-name">Name:</label>
+              <input type="text" id="person-1-name" name="person_1_name" required>
+              <label for="person-1-percentage">Percentage:</label>
+              <input type="number" id="person-1-percentage" name="person_1_percentage">
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+        </form>               
         <p>Text Input style</p>
         <input class="text-input" type="number" />
         <p>Button style</p>

@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import expenses
 
 load_dotenv()
 
@@ -9,7 +10,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://{os.getenv('DB_USERNAME')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
 db = SQLAlchemy(app)
 
-#vars
+# vars
 active_screen = 0
 
 @app.route('/')
@@ -21,10 +22,17 @@ def dashboard():
     active_screen = 1
     return render_template('dashboard.html', active_screen=active_screen)
 
-@app.route('/expenses')
+@app.route('/expenses', methods=['GET', 'POST'])
 def expenses():
     active_screen = 2
+    
+    if request.method == 'POST':
+        expense = float(request.form['expense'])
+        
+        return render_template('expenses.html', active_screen=active_screen, expense=expense)
+    
     return render_template('expenses.html', active_screen=active_screen)
+
 
 @app.route('/settings')
 def settings():
