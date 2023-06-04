@@ -7,6 +7,7 @@ import expenses
 load_dotenv()
 
 app = Flask(__name__)
+app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = f"postgresql://{os.getenv('DB_USERNAME')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
 db = SQLAlchemy(app)
 
@@ -26,18 +27,22 @@ def dashboard():
 def expenses():
     active_screen = 2
     
-    if request.method == 'POST':
-        expense = float(request.form['expense'])
+    try:
+        if request.method == 'POST':
+            total_expense = float(request.form['expense'])
+            # TODO: Implement expense computations
+            return render_template('expenses.html', active_screen=active_screen, expense=total_expense)
         
-        return render_template('expenses.html', active_screen=active_screen, expense=expense)
+        person_count = 2  # Set the initial value for person_count
+        return render_template('expenses.html', active_screen=active_screen, person_count=person_count)
     
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        # You can also log the error using a logging library
+    
+    # Add a default return statement if the request method is 'GET'
     return render_template('expenses.html', active_screen=active_screen)
 
-
-@app.route('/settings')
-def settings():
-    active_screen = 3
-    return render_template('settings.html', active_screen=active_screen)
 
 port = os.getenv('PORT')
 

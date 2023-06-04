@@ -31,6 +31,14 @@
               <label for="person-1-percentage">Percentage:</label>
               <input type="number" id="person-1-percentage" name="person_1_percentage">
             </div>
+            {% for i in range(2, person_count + 1) %}
+            <div class="person-field">
+              <label for="person-{{ i }}-name">Name:</label>
+              <input type="text" id="person-{{ i }}-name" name="person_{{ i }}_name" required>
+              <label for="person-{{ i }}-percentage">Percentage:</label>
+              <input type="number" id="person-{{ i }}-percentage" name="person_{{ i }}_percentage">
+            </div>
+            {% endfor %}
           </div>
           <button type="submit">Submit</button>
         </form>               
