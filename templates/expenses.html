@@ -29,7 +29,7 @@
               <label for="person-1-name">Name:</label>
               <input class="text-input" type="text" id="person-1-name" name="person_1_name" required>
               <label for="person-1-percentage">Percentage:</label>
-              <input class="text-input" type="number" id="person-1-percentage" name="person_1_percentage">
+              <input class="text-input" type="number" id="person-1-percentage" name="person_1_percentage" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
               <label> Individual Total: </label>
               <img src="{{ url_for('static', filename='css/images/x-mark.png') }}"/>
             </div>
@@ -38,7 +38,7 @@
               <label for="person-{{ i }}-name">Name:</label>
               <input class="text-input" type="text" id="person-{{ i }}-name" name="person_{{ i }}_name" required>
               <label for="person-{{ i }}-percentage">Percentage:</label>
-              <input class="text-input" type="number" id="person-{{ i }}-percentage" name="person_{{ i }}_percentage">
+              <input class="text-input" type="number" id="person-{{ i }}-percentage" name="person_{{ i }}_percentage" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
               <label> Individual Total: </label>
               <img src="{{ url_for('static', filename='css/images/x-mark.png') }}" onclick="window.location.href='/delete-person-button-clicked'"/>
             </div>
