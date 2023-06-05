@@ -31,6 +31,7 @@
               <label for="person-1-percentage">Percentage:</label>
               <input class="text-input" type="number" id="person-1-percentage" name="person_1_percentage">
               <label> Individual Total: </label>
+              <img src="{{ url_for('static', filename='css/images/x-mark.png') }}"/>
             </div>
             {% for i in range(2, person_count + 1) %}
             <div class="person-field">
@@ -39,11 +40,12 @@
               <label for="person-{{ i }}-percentage">Percentage:</label>
               <input class="text-input" type="number" id="person-{{ i }}-percentage" name="person_{{ i }}_percentage">
               <label> Individual Total: </label>
+              <img src="{{ url_for('static', filename='css/images/x-mark.png') }}" onclick="window.location.href='/delete-person-button-clicked'"/>
             </div>
             {% endfor %}
-              <button name="add-person" type="button" class="buttons"> + Add Person</button>
+              <button type="button" class="buttons" onclick="window.location.href='/add-person-button-clicked'"> + Add Person</button>
           </div>
-          <button class="buttons" style="float:right" type="submit">Submit</button>
+          <button id="submit-button" name="submit-button" class="buttons" style="float:right" type="submit">Submit</button>
         </form>
       </div>
     </div>

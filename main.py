@@ -26,16 +26,14 @@ def dashboard():
 
 @app.route('/expenses', methods=['GET', 'POST'])
 def expenses():
-    active_screen = 2
+    global person_count, active_screen
     person_count = 2
+    active_screen = 2
     try:
         if request.method == 'POST':
             total_expense = float(request.form['expense'])
             # TODO: Implement expense computations
-            if "add-person" in request.form['expense']:
-                print('clicked')
-                return render_template('expenses.html', active_screen=active_screen, person_count=person_count, expense=total_expense)
-        return render_template('expenses.html', active_screen=active_screen, person_count=person_count)
+            return render_template('expenses.html', active_screen=active_screen, person_count=person_count,expense=total_expense)
         
     except Exception as e:
         print(f"An error occurred: {str(e)}")
@@ -43,6 +41,19 @@ def expenses():
     
     # Add a default return statement if the request method is 'GET'
     return render_template('expenses.html', active_screen=active_screen, person_count=person_count)
+
+@app.route('/add-person-button-clicked')
+def add_person():
+    global person_count
+    person_count += 1
+    return render_template('expenses.html', active_screen=active_screen, person_count=person_count)
+
+@app.route('/delete-person-button-clicked')
+def delete_person():
+    global person_count
+    person_count -= 1
+    return render_template('expenses.html', active_screen=active_screen, person_count=person_count)
+
 
 @app.route('/settings')
 def settings():
