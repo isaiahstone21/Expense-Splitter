@@ -13,6 +13,7 @@ db = SQLAlchemy(app)
 
 # vars
 active_screen = 0
+person_count = 0
 
 @app.route('/')
 def index():
@@ -26,23 +27,27 @@ def dashboard():
 @app.route('/expenses', methods=['GET', 'POST'])
 def expenses():
     active_screen = 2
-    
+    person_count = 2
     try:
         if request.method == 'POST':
             total_expense = float(request.form['expense'])
             # TODO: Implement expense computations
-            return render_template('expenses.html', active_screen=active_screen, expense=total_expense)
-        
-        person_count = 2  # Set the initial value for person_count
+            if "add-person" in request.form['expense']:
+                print('clicked')
+                return render_template('expenses.html', active_screen=active_screen, person_count=person_count, expense=total_expense)
         return render_template('expenses.html', active_screen=active_screen, person_count=person_count)
-    
+        
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         # You can also log the error using a logging library
     
     # Add a default return statement if the request method is 'GET'
-    return render_template('expenses.html', active_screen=active_screen)
+    return render_template('expenses.html', active_screen=active_screen, person_count=person_count)
 
+@app.route('/settings')
+def settings():
+    active_screen = 3
+    return render_template('settings.html', active_screen=active_screen)
 
 port = os.getenv('PORT')
 

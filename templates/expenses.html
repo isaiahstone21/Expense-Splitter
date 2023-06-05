@@ -23,29 +23,28 @@
         <h1>Expenses</h1>
         <form action="/expenses" method="POST">
           <label for="expense">Total Expenses:</label>
-          <input type="text" id="expense" name="expense" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
+          <input class="text-input" type="text" id="expense" name="expense" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
           <div id="people-fields">
             <div class="person-field">
               <label for="person-1-name">Name:</label>
-              <input type="text" id="person-1-name" name="person_1_name" required>
+              <input class="text-input" type="text" id="person-1-name" name="person_1_name" required>
               <label for="person-1-percentage">Percentage:</label>
-              <input type="number" id="person-1-percentage" name="person_1_percentage">
+              <input class="text-input" type="number" id="person-1-percentage" name="person_1_percentage">
+              <label> Individual Total: </label>
             </div>
             {% for i in range(2, person_count + 1) %}
             <div class="person-field">
               <label for="person-{{ i }}-name">Name:</label>
-              <input type="text" id="person-{{ i }}-name" name="person_{{ i }}_name" required>
+              <input class="text-input" type="text" id="person-{{ i }}-name" name="person_{{ i }}_name" required>
               <label for="person-{{ i }}-percentage">Percentage:</label>
-              <input type="number" id="person-{{ i }}-percentage" name="person_{{ i }}_percentage">
+              <input class="text-input" type="number" id="person-{{ i }}-percentage" name="person_{{ i }}_percentage">
+              <label> Individual Total: </label>
             </div>
             {% endfor %}
+              <button name="add-person" type="button" class="buttons"> + Add Person</button>
           </div>
-          <button type="submit">Submit</button>
-        </form>               
-        <p>Text Input style</p>
-        <input class="text-input" type="number" />
-        <p>Button style</p>
-        <a href="#" class="buttons">Buttons</a>
+          <button class="buttons" style="float:right" type="submit">Submit</button>
+        </form>
       </div>
     </div>
   </body>
