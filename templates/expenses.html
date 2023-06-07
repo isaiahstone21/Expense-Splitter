@@ -21,34 +21,33 @@
       </div>
       <div class="hero">
         <h1>Expenses</h1>
-        <form action="/expenses" method="POST">
-          <label for="expense">Total Expenses:</label>
-          <input class="text-input" type="text" id="expense" name="expense" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
+          <label>Total Expenses:</label>
+          <input class="text-input" type="number" step="0.01" id="total-expense-box" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
+          <script src="static/css/javascript/total-expense-script.js"></script>
           <div id="people-fields">
             <div class="person-field">
-              <label for="person-1-name">Name:</label>
-              <input class="text-input" type="text" id="person-1-name" name="person_1_name" required>
-              <label for="person-1-percentage">Percentage:</label>
-              <input class="text-input" type="number" id="person-1-percentage" name="person_1_percentage" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
+              <label>Name:</label>
+              <input class="text-input" type="text" id="person-1-name" required>
+              <label>Percentage:</label>
+              <input class="text-input" type="number" id="person-1-percentage" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
               <label> Individual Total: </label>
               <img src="{{ url_for('static', filename='css/images/x-mark.png') }}"/>
             </div>
-            {% for i in range(2, person_count + 1) %}
             <div class="person-field">
-              <label for="person-{{ i }}-name">Name:</label>
-              <input class="text-input" type="text" id="person-{{ i }}-name" name="person_{{ i }}_name" required>
-              <label for="person-{{ i }}-percentage">Percentage:</label>
-              <input class="text-input" type="number" id="person-{{ i }}-percentage" name="person_{{ i }}_percentage" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
+              <label>Name:</label>
+              <input class="text-input" type="text" id="person-2-name" required>
+              <label>Percentage:</label>
+              <input class="text-input" type="number" id="person-2-percentage" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
               <label> Individual Total: </label>
-              <img src="{{ url_for('static', filename='css/images/x-mark.png') }}" onclick="window.location.href='/delete-person-button-clicked'"/>
+              <img src="{{ url_for('static', filename='css/images/x-mark.png') }}"/>
             </div>
-            {% endfor %}
-              <button type="button" class="buttons" onclick="window.location.href='/add-person-button-clicked'"> + Add Person</button>
+              <button id="add-person-button" type="button" class="buttons"> + Add Person</button>
+              <script src="static/css/javascript/add-person-script.js"></script>
           </div>
-          <button id="submit-button" name="submit-button" class="buttons" style="float:right" type="submit">Submit</button>
-        </form>
+          <button id="calculate" class="buttons" style="float:right" type="submit">Calculate</button>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </body>
   <footer>
     <p>attributions</p>
