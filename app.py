@@ -29,7 +29,7 @@ def dashboard():
 
 @app.route('/expenses', methods=['GET', 'POST'])
 def expenses():
-    try:
+    try: 
         if request.method == 'POST':
             total_expense = float(request.form['expense'])
             # TODO: Implement expense computations

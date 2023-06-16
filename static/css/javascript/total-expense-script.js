@@ -1,10 +1,12 @@
-
 //Event Listeners
-document.addEventListener('DOMContentLoaded', function() {
-  var totalExpenseInputBox = document.getElementById('total-expense-box');
-  totalExpenseInputBox.addEventListener('change', handleTotalExpenseInputChange);
+document.addEventListener("DOMContentLoaded", function () {
+  var totalExpenseInputBox = document.getElementById("total-expense-box");
+  totalExpenseInputBox.addEventListener(
+    "change",
+    handleTotalExpenseInputChange
+  );
 
-  var savedValue = sessionStorage.getItem('totalExpense');
+  var savedValue = sessionStorage.getItem("totalExpense");
   if (savedValue) {
     totalExpenseInputBox.value = savedValue;
   }
@@ -12,9 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //Actual Functionality
 function handleTotalExpenseInputChange() {
-  var totalExpenseInputBox = document.getElementById('total-expense-box');
+  var totalExpenseInputBox = document.getElementById("total-expense-box");
   var input = totalExpenseInputBox.value;
-  console.log(input)
-  sessionStorage.setItem('totalExpense', input);
+  console.log(input);
+  sessionStorage.setItem("totalExpense", input);
 }
-
