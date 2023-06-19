@@ -46,6 +46,10 @@ def expenses():
 def settings():
     return render_template('settings.html', active_screen=ActiveScreen.SETTINGS.value)
 
+@app.route('/result')
+def result():
+    return render_template('result.html')
+
 port = os.getenv('PORT')
 
 if __name__ == '__main__':
