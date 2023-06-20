@@ -39,6 +39,10 @@ function addPerson() {
 
   var deleteImage = document.createElement('img');
   deleteImage.src = 'static/css/images/x-mark.png';
+  deleteImage.id = "delete-person-" + (personCount + 1);
+  deleteImage.addEventListener('click', function() {
+    deletePerson(newPersonField);
+  });
 
 
   newPersonField.appendChild(nameLabel);
@@ -55,4 +59,9 @@ function addPerson() {
   personFields.insertBefore(newPersonField, addPersonButton);
 
   //TODO: Implement session storage for new person added
+}
+
+function deletePerson(personField) {
+  var personFields = document.getElementById('people-fields');
+  personFields.removeChild(personField);
 }

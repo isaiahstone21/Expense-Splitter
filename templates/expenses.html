@@ -31,7 +31,7 @@
               <label>Percentage:</label>
               <input class="text-input" type="number" id="person-1-percentage" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
               <label> Individual Total: </label>
-              <img src="{{ url_for('static', filename='css/images/x-mark.png') }}"/>
+              <img id="delete-person-1" src="{{ url_for('static', filename='css/images/x-mark.png') }}"/>
             </div>
             <div class="person-field">
               <label>Name:</label>
@@ -39,7 +39,7 @@
               <label>Percentage:</label>
               <input class="text-input" type="number" id="person-2-percentage" inputmode="numeric" pattern="\d+(\.\d{2})?" required>
               <label> Individual Total: </label>
-              <img src="{{ url_for('static', filename='css/images/x-mark.png') }}"/>
+              <img id="delete-person-2" src="{{ url_for('static', filename='css/images/x-mark.png') }}"/>
             </div>
               <button id="add-person-button" type="button" class="buttons"> + Add Person</button>
               <script src="static/css/javascript/add-person-script.js"></script>
