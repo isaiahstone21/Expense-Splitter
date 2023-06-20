@@ -21,8 +21,12 @@ function handleSubmitButtonClick() {
       // Empty input detected, set isValid flag to false
       isValid = false;
       // Optionally, you can also add visual cues to indicate the error to the user
-      nameInput.classList.add("error"); // Add a CSS class for error styling
-      percentageInput.classList.add("error"); // Add a CSS class for error styling
+      if (name === ""){
+        nameInput.classList.add("error"); // Add a CSS class for error styling
+      }
+      if (percentage === "") {
+        percentageInput.classList.add("error"); // Add a CSS class for error styling
+      }
     } else {
       var personData = {
         name: name,
@@ -30,7 +34,11 @@ function handleSubmitButtonClick() {
       };
       isValid = true;
       peopleData.push(personData);
+      //remove the classes after user actually inputs data
+      nameInput.classList.remove("error"); 
+      percentageInput.classList.remove("error"); 
     }
+
   });
 
   if (isValid) {

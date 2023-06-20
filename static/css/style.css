@@ -98,3 +98,8 @@ h1 {
   border-color: #147edd;
   box-shadow: 0 0 5px rgba(20, 126, 221, 0.5);
 }
+
+.error {
+  outline: red;
+  box-shadow: 0 0 5px rgba(246, 3, 3, 0.929);
+}
