@@ -103,3 +103,7 @@ h1 {
   outline: red;
   box-shadow: 0 0 5px rgba(246, 3, 3, 0.929);
 }
+
+.submitError {
+  color: red;
+}

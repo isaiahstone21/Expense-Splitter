@@ -19,7 +19,7 @@
         <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 2 else '' }}" href="/expenses">Expenses</a>
         <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 3 else '' }}" href="/settings">Settings</a>
       </div>
-      <div class="hero">
+      <div id="hero" class="hero">
         <h1>Expenses</h1>
           <label>Total Expenses:</label>
           <input class="text-input" type="number" step="0.01" id="total-expense-box" inputmode="numeric" pattern="\d+(\.\d{2})?" required>

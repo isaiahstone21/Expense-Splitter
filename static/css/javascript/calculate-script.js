@@ -46,6 +46,14 @@ function handleSubmitButtonClick() {
 
     window.location.href = "/result";
   } else {
-    console.log("Please fill in all the required fields.");
+    var heroDiv = document.getElementById("hero");
+    var errorLabel = document.getElementById("submit-error-button");
+    if (!errorLabel) {
+      errorLabel = document.createElement("label");
+      errorLabel.textContent = "Please fill in all required fields.";
+      errorLabel.classList.add("submitError");
+      errorLabel.id = "submit-error-button";
+      heroDiv.appendChild(errorLabel);
+    }
   }
 }
