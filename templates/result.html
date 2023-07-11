@@ -21,15 +21,47 @@
       </div>
       <div class="hero">
         <h1>Results</h1>
+        <div id="result-container">
+          
+        </div>
       </div>
     </div>
+    <footer>
+      <p>attributions</p>
+      <a
+        href="https://www.flaticon.com/free-icons/calculator"
+        title="calculator icons"
+        >Calculator icons created by Vitaly Gorbachev - Flaticon</a
+      >
+    </footer>
+    <script src="{{ url_for('static', filename='css/javascript/calculate-script.js') }}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var urlParams = new URLSearchParams(window.location.search);
+        var encodedData = urlParams.get("data");
+        alert("Encoded data: " + encodedData); // Add this line
+        if (encodedData) {
+          var data = JSON.parse(decodeURIComponent(encodedData));
+          alert("Decoded data: " + JSON.stringify(data)); // Add this line
+          displayResults(data);
+        }
+      });
+
+      function displayResults(data) {
+        alert("Displaying data: " + JSON.stringify(data)); // Add this line
+        var resultContainer = document.getElementById("result-container");
+        if (resultContainer) {
+          resultContainer.innerHTML = "";
+
+          data.forEach(function (person) {
+            alert("Person: " + JSON.stringify(person)); // Add this line
+            var personElement = document.createElement("p");
+            personElement.textContent =
+              "Name: " + person.name + ", Percentage: " + person.percentage;
+            resultContainer.appendChild(personElement);
+          });
+        }
+      }
+    </script>
   </body>
-  <footer>
-    <p>attributions</p>
-    <a
-      href="https://www.flaticon.com/free-icons/calculator"
-      title="calculator icons"
-      >Calculator icons created by Vitaly Gorbachev - Flaticon</a
-    >
-  </footer>
 </html>

@@ -1,9 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var submitButton = document.getElementById("calculate");
-  submitButton.addEventListener("click", handleSubmitButtonClick);
-});
-
-function handleSubmitButtonClick() {
+function handleCalculateButtonClick() {
   var totalExpenseInput = document.getElementById("total-expense-box");
   var totalExpense = totalExpenseInput.value;
 
@@ -12,7 +7,7 @@ function handleSubmitButtonClick() {
 
   var peopleData = [];
   var isValid = true;
-  var percentageSum = 0; // Initialize the sum inside the function
+  var percentageSum = 0;
 
   if (totalExpense === "" || isNaN(parseFloat(totalExpense))) {
     isValid = false;
@@ -26,17 +21,15 @@ function handleSubmitButtonClick() {
     var percentageInput = person.querySelector("input[type='number']");
     var name = nameInput.value;
     var percentage = percentageInput.value;
-    percentageSum += parseFloat(percentage); // Convert percentage to numeric type before adding
+    percentageSum += parseFloat(percentage);
 
     if (name === "" || percentage === "") {
-      // Empty input detected, set isValid flag to false
       isValid = false;
-      // Optionally, you can also add visual cues to indicate the error to the user
       if (name === "") {
-        nameInput.classList.add("error"); // Add a CSS class for error styling
+        nameInput.classList.add("error");
       }
       if (percentage === "") {
-        percentageInput.classList.add("error"); // Add a CSS class for error styling
+        percentageInput.classList.add("error");
       }
     } else {
       var personData = {
@@ -44,7 +37,7 @@ function handleSubmitButtonClick() {
         percentage: percentage,
       };
       peopleData.push(personData);
-      // Remove the error classes after the user actually inputs data
+
       nameInput.classList.remove("error");
       percentageInput.classList.remove("error");
     }
@@ -55,9 +48,9 @@ function handleSubmitButtonClick() {
   }
 
   if (isValid) {
-    console.log(peopleData);
-    window.location.href = "/result";
-  } else {
+    var encodedData = encodeURIComponent(JSON.stringify(peopleData));
+    window.location.href = "/result?data=" + encodedData;
+} else {
     var heroDiv = document.getElementById("hero");
     var errorLabel = document.getElementById("submit-error-button");
     if (!errorLabel) {
@@ -65,7 +58,7 @@ function handleSubmitButtonClick() {
       errorLabel.textContent = "Please fill in all required fields.";
       errorLabel.classList.add("submitError");
       errorLabel.id = "submit-error-button";
-      heroDiv.appendChild;
+      heroDiv.appendChild(errorLabel);
     }
   }
 }

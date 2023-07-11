@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Expenses</title>
+    <script src="static/css/javascript/calculate-script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link
@@ -44,8 +45,9 @@
               <button id="add-person-button" type="button" class="buttons"> + Add Person</button>
               <script src="static/css/javascript/add-person-script.js"></script>
           </div>
-          <button id="calculate" class="buttons" style="float:right" type="submit" href="/result">Calculate</button>
-          <script src="static/css/javascript/calculate-script.js"></script>
+          <a id="calculate" class="buttons" style="float:right" href="javascript:void(0)" onclick="handleCalculateButtonClick()">Calculate</a>
+
+          
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

@@ -4,8 +4,6 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from enum import Enum
 
-import expenses
-
 load_dotenv()
 
 app = Flask(__name__)
