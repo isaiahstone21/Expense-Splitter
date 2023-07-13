@@ -13,14 +13,42 @@
   <body>
     <div class="container">
       <div class="nav-bar">
-        <img src="{{ url_for('static', filename='css/images/calculator-logo.png') }}"/>
+        <img
+          src="{{ url_for('static', filename='css/images/calculator-logo.png') }}"
+        />
         <a class="nav-bar-logo" href="/">Expense Splitter</a>
-        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 1 else '' }}" href="/dashboard">Dashboard</a>
-        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 2 else '' }}" href="/expenses">Expenses</a>
-        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 3 else '' }}" href="/settings">Settings</a>
+        <a
+          class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 1 else '' }}"
+          href="/dashboard"
+          >Dashboard</a
+        >
+        <a
+          class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 2 else '' }}"
+          href="/expenses"
+          >Expenses</a
+        >
+        <a
+          class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 3 else '' }}"
+          href="/settings"
+          >Settings</a
+        >
       </div>
-      <div class="hero">
-        <h1>Dashboard</h1>
+      <div class="welcome">
+        <hr />
+        <h1>Welcome to our Expense Splitter app!</h1>
+        <hr />
+      </div>
+      <div class="instructions">
+        To get started, navigate to the expenses tab. Once you reach the
+        expenses tab, follow the instructions below.
+
+        <ol class="instructions"> <h1><strong>Instructions:</strong></h1>
+          <li>Input the name and percentage of each person.</li>
+          <li>Add as many people as necessary.</li>
+          <li>Make sure total percentage adds to 100%.</li>
+          <li>Click calculate to see results.</li>
+        </ol>
+        <hr>
       </div>
     </div>
   </body>

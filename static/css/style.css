@@ -31,10 +31,10 @@ h1 {
 }
 
 .nav-bar-logo {
-  color: #000000;
+  color: white;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 26px;
   flex: 1;
 }
 
@@ -63,15 +63,16 @@ h1 {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   border: 2px solid white;
 }
 
 .hero {
   background-color: #fff;
-  color: #333;
+  color: #147edd;
   padding: 20px;
   flex: 1;
+  font-size: 18px;
 }
 
 .buttons {
@@ -106,4 +107,21 @@ h1 {
 
 .submitError {
   color: red;
+}
+
+.welcome {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  color: #147edd;
+  font-size: 32px;
+}
+
+.instructions {
+  text-align: center;
+  background-color: white;
+  list-style-position: inside;
+  font-size: 22px;
+  padding-left: inherit;
+  color: #147edd;
 }

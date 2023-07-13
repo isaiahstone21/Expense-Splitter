@@ -39,25 +39,21 @@
       document.addEventListener("DOMContentLoaded", function () {
         var urlParams = new URLSearchParams(window.location.search);
         var encodedData = urlParams.get("data");
-        alert("Encoded data: " + encodedData); // Add this line
         if (encodedData) {
           var data = JSON.parse(decodeURIComponent(encodedData));
-          alert("Decoded data: " + JSON.stringify(data)); // Add this line
           displayResults(data);
         }
       });
 
       function displayResults(data) {
-        alert("Displaying data: " + JSON.stringify(data)); // Add this line
         var resultContainer = document.getElementById("result-container");
         if (resultContainer) {
           resultContainer.innerHTML = "";
 
           data.forEach(function (person) {
-            alert("Person: " + JSON.stringify(person)); // Add this line
             var personElement = document.createElement("p");
             personElement.textContent =
-              "Name: " + person.name + ", Percentage: " + person.percentage;
+              "Name: " + person.name + ", Percentage: " + person.percentage + ", Amount: " + (parseFloat(person.percentage / 100) * parseFloat(sessionStorage.getItem("totalExpense"))).toFixed(2);
             resultContainer.appendChild(personElement);
           });
         }
