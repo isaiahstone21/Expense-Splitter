@@ -31,11 +31,6 @@ function addPerson() {
   percentageInput.id = 'person-' + (personCount + 1) + '-percentage';
   percentageInput.inputmode = 'numeric';
   percentageInput.pattern = '\\d+(\\.\\d{2})?';
-  
-  //Creates a label for individual total
-  var individualTotalLabel = document.createElement('label');
-  individualTotalLabel.textContent = ' Individual Total: ';
-
 
   var deleteImage = document.createElement('img');
   deleteImage.src = 'static/css/images/x-mark.png';
@@ -49,7 +44,6 @@ function addPerson() {
   newPersonField.appendChild(nameInput);
   newPersonField.appendChild(percentageLabel);
   newPersonField.appendChild(percentageInput);
-  newPersonField.appendChild(individualTotalLabel);
   newPersonField.appendChild(deleteImage);
 
   personFields.appendChild(newPersonField);

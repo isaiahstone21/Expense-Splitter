@@ -50,7 +50,7 @@ function handleCalculateButtonClick() {
   if (isValid) {
     var encodedData = encodeURIComponent(JSON.stringify(peopleData));
     window.location.href = "/result?data=" + encodedData;
-} else {
+  } else {
     var heroDiv = document.getElementById("hero");
     var errorLabel = document.getElementById("submit-error-button");
     if (!errorLabel) {
