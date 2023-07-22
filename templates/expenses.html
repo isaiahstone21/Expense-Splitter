@@ -15,10 +15,9 @@
     <div class="container">
       <div class="nav-bar">
         <img src="{{ url_for('static', filename='css/images/calculator-logo.png') }}"/>
-        <a class="nav-bar-logo" href="/">Expense Splitter</a>
-        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 1 else '' }}" href="/dashboard">Dashboard</a>
+        <a class="nav-bar-logo">Expense Splitter</a>
+        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 1 else '' }}" href="/">Dashboard</a>
         <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 2 else '' }}" href="/expenses">Expenses</a>
-        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 3 else '' }}" href="/settings">Settings</a>
       </div>
       <div id="hero" class="hero">
         <h1>Expenses</h1>
@@ -42,7 +41,7 @@
               <label> Individual Total: </label>
               <img id="delete-person-2" src="{{ url_for('static', filename='css/images/x-mark.png') }}"/>
             </div>
-              <button id="add-person-button" type="button" class="buttons"> + Add Person</button>
+              <button id="add-person-button" class="buttons"> + Add Person</button>
               <script src="static/css/javascript/add-person-script.js"></script>
           </div>
           <a id="calculate" class="buttons" style="float:right" href="javascript:void(0)" onclick="handleCalculateButtonClick()">Calculate</a>
@@ -53,11 +52,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </body>
   <footer>
-    <p id="attributions">attributions</p>
-    <a
-      href="https://www.flaticon.com/free-icons/calculator"
-      title="calculator icons"
-      >Calculator icons created by Vitaly Gorbachev - Flaticon</a
-    >
-  </footer>
+    <div class="footer-content">
+      <p>&copy; 2023 Expense Splitter App</p>
+      <ul class="footer-links">
+        <li><a href="https://www.flaticon.com/free-icons/calculator">Attribution</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
 </html>

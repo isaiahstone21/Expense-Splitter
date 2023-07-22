@@ -14,10 +14,9 @@
     <div class="container">
       <div class="nav-bar">
         <img src="{{ url_for('static', filename='css/images/calculator-logo.png') }}"/>
-        <a class="nav-bar-logo" href="/">Expense Splitter</a>
-        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 1 else '' }}" href="/dashboard">Dashboard</a>
+        <a class="nav-bar-logo">Expense Splitter</a>
+        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 1 else '' }}" href="/">Dashboard</a>
         <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 2 else '' }}" href="/expenses">Expenses</a>
-        <a class="nav-bar-other{{ ' nav-bar-other-active' if active_screen == 3 else '' }}" href="/settings">Settings</a>
       </div>
       <div class="hero">
         <h1 style="text-align: center; font-size: 28px;">Results</h1>
@@ -26,15 +25,16 @@
         </div>
       </div>
     </div>
-    <footer>
-      <p id="attributions">attributions</p>
-      <a
-        href="https://www.flaticon.com/free-icons/calculator"
-        title="calculator icons"
-        >Calculator icons created by Vitaly Gorbachev - Flaticon</a
-      >
-    </footer>
     <script src="{{ url_for('static', filename='css/javascript/calculate-script.js') }}"></script>
     <script src="{{ url_for('static', filename='css/javascript/display-results-script.js') }}"></script>
   </body>
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2023 Expense Splitter App</p>
+        <ul class="footer-links">
+          <li><a href="https://www.flaticon.com/free-icons/calculator">Attribution</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </html>
