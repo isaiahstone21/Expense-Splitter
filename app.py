@@ -34,4 +34,4 @@ def result():
 port = os.getenv('PORT')
 
 if __name__ == '__main__':
-    app.run(port=port)
+    app.run(port=5000)
