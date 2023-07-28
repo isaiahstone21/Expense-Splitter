@@ -8,6 +8,7 @@ function handleCalculateButtonClick() {
   var peopleData = [];
   var isValid = true;
   var percentageSum = 0;
+  var nameInputFlag = false;
 
   if (totalExpense === "" || isNaN(parseFloat(totalExpense))) {
     isValid = false;
@@ -15,6 +16,13 @@ function handleCalculateButtonClick() {
   } else {
     totalExpenseInput.classList.remove("error");
   }
+  if (totalExpense <= 0) {
+    isValid = false;
+    totalExpenseInput.classList.add("error");
+  } else {
+    totalExpenseInput.classList.remove("error");
+  }
+
 
   personArray.forEach(function (person) {
     var nameInput = person.querySelector("input[type='text']");
@@ -27,6 +35,7 @@ function handleCalculateButtonClick() {
       isValid = false;
       if (name === "") {
         nameInput.classList.add("error");
+        nameInputFlag = true;
       }
       if (percentage === "") {
         percentageInput.classList.add("error");
@@ -43,7 +52,7 @@ function handleCalculateButtonClick() {
     }
   });
 
-  if (percentageSum !== 100.0) {
+  if (percentageSum !== 100.0){
     isValid = false;
   }
 
@@ -55,7 +64,20 @@ function handleCalculateButtonClick() {
     var errorLabel = document.getElementById("submit-error-button");
     if (!errorLabel) {
       errorLabel = document.createElement("label");
-      errorLabel.textContent = "Please fill in all required fields.";
+      if (nameInputFlag){
+        errorLabel.textContent = "Please fill in all required fields.";
+      } else if (percentageSum !== 100.0){
+        errorLabel.textContent = "Please make sure percentages adds up to 100.";
+      }
+      errorLabel.classList.add("submitError");
+      errorLabel.id = "submit-error-button";
+      heroDiv.appendChild(errorLabel);
+    } else {
+      if (nameInputFlag){
+        errorLabel.textContent = "Please fill in all required fields.";
+      } else if (percentageSum !== 100.0){
+        errorLabel.textContent = "Please make sure percentages adds up to 100.";
+      }
       errorLabel.classList.add("submitError");
       errorLabel.id = "submit-error-button";
       heroDiv.appendChild(errorLabel);
