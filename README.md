@@ -1,4 +1,3 @@
 # Expense-Splitter
-Full-stack web application that splits expenses between a group of people.
+Expense Splitter is a web application designed to handle bill-splitting among multiple people or parties. Developed with a backend powered by Python's Flask framework and utilizes an efficient client-side functionality implemented in Javascript. The web application manages user inputs along with effective error-handling techniques to ensure a smooth user experience.
 
-**TODO:** Make sure to provide documentation on how to setup .env
