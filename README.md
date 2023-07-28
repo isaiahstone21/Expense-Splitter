@@ -6,7 +6,7 @@ If you would like to use the app with no configuration on your end just click th
 LINK HERE
 
 ## Dependencies
-Before anything make sure you have the following packages installed on your local system.
+Before anything make sure you have the following packages installed on your local system:
 
 1. pip or pip3
 2. Flask
