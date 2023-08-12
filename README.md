@@ -23,3 +23,9 @@ If you plan on using the App locally you will need to setup a dev environment on
 
 ## Docker Setup
 
+1. Have the docker extension downloaded from VS Code.
+2. Clone the repository to your local system.
+3. Open up the folder where you cloned in VS Code.
+4. Right click on the dockerfile in the folder and click build image.
+5. After the image is built use this command in your terminal to run a docker container ```docker run -p 8080:8080 expensesplitter:latest```
+6. Now you are all set and the web application should be running in a docker container binded to your local hosts ip.
